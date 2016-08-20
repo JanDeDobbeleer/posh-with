@@ -1,59 +1,48 @@
 # with
+
+[![Build status](https://img.shields.io/appveyor/ci/janjoris/posh-with/master.svg?maxAge=2592000)](https://ci.appveyor.com/project/JanJoris/posh-with)
+
 Program prefixing for continuous workflow using a single tool.
 
 ### Installation
 
-`curl -s https://raw.githubusercontent.com/mchav/with/master/install | bash`
+Use the PowerShell Gallery to install posh-with:
+
+    Install-Module posh-with
 
 ### Usage
 
-`with <program>`
-
+    with <program>
 
 Starts an interactive shell with where every command is prefixed using `<program>`.
 
 For example:
-```
-$ with git
-git> add .
-git> commit -a -m "Commited"
-git> push
-```
 
-
-Can also be used for compound commands.
-```
-$ with java Primes
-java Primes> 1
-2
-java Primes> 4
-7
-```
+    PS> with git
+    PS GIT> add .
+    PS GIT> commit -a -m "Commited"
+    PS GIT> push
 
 And to repeat commands:
-```
-$ with gcc -o output input.c
-gcc -o -output input.c>
-<enter>
-Compiling...
-gcc -o -output input.c>
-```
 
+    PS> with gcc -o output input.c
+    PS GCC -O -OUTPUT INPUT.C>
+    <enter>
+    Compiling...
+    PS GCC -O -OUTPUT INPUT.C>
 
 To execute a shell command proper prefix line with `:`.
 
 
-`git> :ls`
+    PS GIT> :ls
 
 You can also drop and add different commands.
 
-```
-git> +add
-git add> <some file>
-git add> -
-git>
-```
+    PS GIT> > add
+    PS GIT ADD> <some file>
+    PS GIT ADD> <
+    PS GIT>
 
-To exit use either `:q` or `:exit:`.
+To exit use `:q`.
 
 Currently supports command history and limited completions.
