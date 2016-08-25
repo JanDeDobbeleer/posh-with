@@ -1,6 +1,6 @@
 # with
 
-[![Build status](https://img.shields.io/appveyor/ci/janjoris/posh-with/master.svg?maxAge=2592000)](https://ci.appveyor.com/project/JanJoris/posh-with)
+[![Build status](https://img.shields.io/appveyor/ci/janjoris/posh-with/master.svg)](https://ci.appveyor.com/project/JanJoris/posh-with)
 
 Program prefixing for continuous workflow using a single tool.
 
@@ -46,3 +46,17 @@ You can also drop and add different commands.
 To exit use `:q`.
 
 Currently supports command history and limited completions.
+
+### Theming
+
+To override the current prompt, create your own implementation using this function template:
+
+    function global:Write-WithPrompt()
+    {
+        param(
+            [string]
+            $command
+        )
+
+        // Your awesome prompt building logic goes here
+    }

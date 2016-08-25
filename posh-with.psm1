@@ -65,7 +65,7 @@ function Start-With()
     }
 }
 
-function Write-WithPrompt()
+function global:Write-WithPrompt()
 {
     param(
         [string]
